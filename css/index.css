@@ -1,0 +1,12 @@
+.box {
+  border: solid black;  
+  /* background: black; */
+  flex: 33%;
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  height: 33vh; 
+  vertical-align: center;
+}

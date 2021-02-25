@@ -1,7 +1,47 @@
 * {
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  color: white;
+  background-color: black;
+  padding: 30px;
+  /* height: 10vh; */
+  text-align: center;
+  /* position: fixed; */
+  width: 100%;
+}
+
+.box {
+  border: solid black;  
+  /* background: black; */
+  flex: 33%;
+  margin: 20px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.row {
+  display: flex;
+  height: 35vh; 
+}
+
+#box1 p {
+  display: inline;
+}
+#box2 img {
+  transform: scale(.75);
+  object-position: center center;
 }
 
 footer {
   clear: both;
+  color: white;
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
 }
