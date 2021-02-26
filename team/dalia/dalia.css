@@ -14,9 +14,10 @@
   font-size: x-large;
 }
 
-.button {
+.button,
+#alert-button {
   display: block;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: large;
   margin: 0 auto 0 auto;
   border: none;
@@ -25,10 +26,35 @@
   padding: 5px 15px 5px 15px;
   transition: 300ms;
 }
-.button:hover {
+.button:hover,
+#alert-button {
   background-color: black;
   transition: 300ms;
 }
-.button:focus {
+.button:focus,
+#alert-button {
   outline: 0;
+}
+
+
+#alert {
+  visibility: hidden;
+  display: table;
+  position: fixed;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  background-color: burlywood;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+}
+#alert-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+#alert-text {
+  font-weight: bold;
+  font-size: x-large;
 }
