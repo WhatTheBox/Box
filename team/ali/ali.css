@@ -1,5 +1,13 @@
+body {
+  background-color: black;
+}
+
 #box5 {
+  /* background-color: white; */
+  color: white;
   display: table;
+  border-radius: 0;
+  box-shadow: rgba(250, 250, 250, 0.4) 0 0 0 5px, rgba(250, 250, 250, 0.3) -5px 5px 0 5px, rgba(250, 250, 250, 0.2) -10px 10px 0 5px, rgba(250, 250, 250, 0.1) -15px 15px 0 5px;
 }
 
 #form {
@@ -14,28 +22,55 @@
   font-size: x-large;
 }
 
-.button,
+/* .button,
 #alert-button {
-  display: block;
-  /* font-weight: bold; */
-  font-size: large;
-  margin: 0 auto 0 auto;
   border: none;
   background-color: grey;
   color: white;
+  font-size: large;
+  display: block;
+  margin: 0 auto 0 auto;
+  outline: 0;
   padding: 5px 15px 5px 15px;
-  transition: 300ms;
+  cursor: pointer;
+  box-shadow: 0 5px 0 red;
+  transition: all .1s linear;
 }
 .button:hover,
-#alert-button {
+#alert-button:hover {
   background-color: black;
   transition: 300ms;
 }
 .button:focus,
-#alert-button {
+#alert-button:focus {
   outline: 0;
 }
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 2 blue;
+  transform: translateY(3px);
+} */
 
+.button,
+#alert-button {
+  display: block;
+  border: 0;
+  background-color: grey;
+  /* border-radius: 4px; */
+  box-shadow: 0 5px 0 white;
+  color: #fff;
+  cursor: pointer;
+  font-size: large;
+  margin: 0 auto 0 auto;
+  outline: 0;
+  /* padding: 12px 20px; */
+  transition: all .1s linear;
+}
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 0 white;
+  transform: translateY(3px);
+}
 
 #alert {
   visibility: hidden;
@@ -58,3 +93,101 @@
   font-weight: bold;
   font-size: x-large;
 }
+
+
+@keyframes slide {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    left: 244px;
+    top: 100px;
+  }
+  100% {
+    left: 488px;
+    top: 0;
+  }
+}
+
+@keyframes straightLine {
+  50% {
+    transform: translate3D(100px, -100px, 0);
+  }
+}
+
+
+@keyframes xAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(350px);
+  }
+}
+
+@keyframes yAxis {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(150px);
+  }
+}
+
+#fake1 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis 5s infinite ease-out;
+}
+#fig1 {
+  background-color: aqua;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis 4s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig1:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig1-2 {
+  background-color: aqua;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis 4s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig1-2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+#fake4 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis 5s infinite ease-out;
+}
+#fig4 {
+  background-color: tomato;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis 2s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig4:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
