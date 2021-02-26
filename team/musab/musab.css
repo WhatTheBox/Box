@@ -1,0 +1,26 @@
+#box5 {
+  display: table;
+}
+
+#form {
+  padding: 30px;
+  text-align: center;
+  display: table-cell;
+}
+
+#label {
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.button {
+  display: block;
+  font-weight: bold;
+  font-size: large;
+  margin: 0 auto 0 auto;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 5px 15px 5px 15px;
+}
