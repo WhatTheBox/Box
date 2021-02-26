@@ -20,7 +20,15 @@
   font-size: large;
   margin: 0 auto 0 auto;
   border: none;
-  background-color: black;
+  background-color: grey;
   color: white;
   padding: 5px 15px 5px 15px;
+  transition: 300ms;
+}
+.button:hover {
+  background-color: black;
+  transition: 300ms;
+}
+.button:focus {
+  outline: 0;
 }
