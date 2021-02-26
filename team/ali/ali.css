@@ -117,27 +117,26 @@ body {
 }
 
 
-@keyframes xAxis {
+/* ball 1 */
+@keyframes xAxis1 {
   50% {
     animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
-    transform: translateX(350px);
+    transform: translateX(850px);
   }
 }
-
-@keyframes yAxis {
+@keyframes yAxis1 {
   50% {
     animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
-    transform: translateY(150px);
+    transform: translateY(125px);
   }
 }
-
 #fake1 {
   /* background: tomato; */
   opacity: 75%;
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  animation: yAxis 5s infinite ease-out;
+  animation: yAxis1 5s infinite ease-out;
 }
 #fig1 {
   background-color: aqua;
@@ -146,7 +145,7 @@ body {
   box-shadow: inset 0 0 20px;
   height: 100px;
   width: 100px;
-  animation: xAxis 4s infinite ease-in;
+  animation: xAxis1 6s infinite ease-in;
   transition: 200ms ease-in-out;
 }
 #fig1:hover {
@@ -160,7 +159,7 @@ body {
   box-shadow: inset 0 0 20px;
   height: 100px;
   width: 100px;
-  animation: xAxis 4s infinite ease-in;
+  animation: xAxis1 5s infinite ease-in;
   transition: 200ms ease-in-out;
 }
 #fig1-2:hover {
@@ -169,12 +168,98 @@ body {
 }
 
 
+/* ball 2 */
+@keyframes xAxis2 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(750px);
+  }
+}
+@keyframes yAxis2 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(15px);
+  }
+}
+#fake2 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis2 5s infinite ease-out;
+}
+#fig2 {
+  background-color: magenta;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis2 3s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 3 */
+@keyframes xAxis3 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis3 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
+#fake3 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis3 5s infinite ease-out;
+}
+#fig3 {
+  background-color: yellow;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis3 7s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig3:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 4 */
+@keyframes xAxis4 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis4 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
 #fake4 {
   opacity: 75%;
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  animation: xAxis 5s infinite ease-out;
+  animation: xAxis4 5s infinite ease-out;
 }
 #fig4 {
   background-color: tomato;
@@ -183,7 +268,7 @@ body {
   box-shadow: inset 0 0 20px;
   height: 100px;
   width: 100px;
-  animation: yAxis 2s infinite ease-in;
+  animation: yAxis4 2s infinite ease-in;
   transition: 200ms ease-in-out;
 }
 #fig4:hover {
@@ -191,3 +276,139 @@ body {
   transition: 200ms ease-in-out;
 }
 
+
+/* ball 6 */
+@keyframes xAxis6 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis6 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
+#fake6 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis6 2s infinite ease-out;
+}
+#fig6 {
+  background-color: pink;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis6 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig6:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 7 */
+@keyframes xAxis7 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(650px);
+  }
+}
+@keyframes yAxis7 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(100px);
+  }
+}
+#fake7 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis7 10s infinite ease-out;
+}
+#fig7 {
+  background-color:white;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis7 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig7:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 8 */
+@keyframes xAxis8 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(400px);
+  }
+}
+@keyframes yAxis8 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(25px);
+  }
+}
+#fake8 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis8 3s infinite ease-out;
+}
+#fig8-1 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-1:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig8-2 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 5s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig8-3 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 4s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-3:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
