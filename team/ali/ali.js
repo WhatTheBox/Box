@@ -56,7 +56,7 @@ function handleClickOne(event) {
   if(counterQuestOne === 2){
     alertBox.style.visibility = 'visible';
     alertText.textContent = 'CONGRATS!!! these were the only two balls with the same color!';
-    alertButton.textContent = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!'
+    alertButton.textContent = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!';
     console.log('before', counterQuestOne);
     counterQuestOne = 0;
     // score++;
@@ -80,7 +80,6 @@ function handleClickTwo(event) {
   buttonThree.textContent = aliAnswerTwo[2];
   const buttonFour = document.getElementById('button4');
   buttonFour.textContent = aliAnswerTwo[3];
-  
   console.log(event.target);
   console.log(event.target.id);
   console.log(event.target.className);
