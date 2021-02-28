@@ -13,65 +13,67 @@
   <header>
     <h1>BOX</h1>
   </header>
-
   <main>
+    <main>
 
-    <section id="alert">
-      <section id="alert-box">
-        <p id="alert-text">ALERT</p>
+      <section id="alert">
+        <section id="alert-box">
+          <p id="alert-text">ALERT</p>
+          </br>
+          <button id="alert-button">TRY AGAIN</button>
+        </section>
+      </section>
+  
+      <section id="row1" class="row">
+  
+        <section id="box1" class="box"></section>
+  
+        <section id="box2" class="box"></section>
+  
+        <section id="box3" class="box"></section>
+  
+      </section>
+  
+      <section id="row2" class="row">
+  
+        <section id="box4" class="box"></section>
+  
+        <section id="quiz" class="box">
+          <fieldset id="question">  
+            <label for="answer" id="label"></label>
+            </br>
+          </fieldset>
+          
+        <button id="buttonA" class="button" data-id="incorrect" onclick="checkAnswer('A')">A</button>
         </br>
-        <button id="alert-button">TRY AGAIN</button>
+        <button id="buttonB" class="button" data-id="correct" onclick="checkAnswer('B')">B</button>
+        </br>
+        <button id="buttonC" class="button" data-id="incorrect" onclick="checkAnswer('C')">C</button>
+        </br>
+        <button id="buttonD" class="button" data-id="incorrect" onclick="checkAnswer('D')">D</button>
+          
+        </section>
+        
+        <section id="box6" class="box"></section>
+  
       </section>
-    </section>
-
-    <section id="row1" class="row">
-
-      <section id="box1" class="box"></section>
-
-      <section id="box2" class="box"></section>
-
-      <section id="box3" class="box"></section>
-
-    </section>
-
-    <section id="row2" class="row">
-
-      <section id="box4" class="box"></section>
-
-      <section id="box5" class="box">
-        <fieldset id="form">
-          <label for="answer" id="label"></label>
-          </br>
-          <button id="button1" class="button"></button>
-          </br>
-          <button id="button2" class="button"></button>
-          </br>
-          <button id="button3" class="button"></button>
-          </br>
-          <button id="button4" class="button"></button>
-        </fieldset>
+  
+      <section id="row3" class="row">
+  
+        <section id="box7" class="box"></section>
+  
+        <section id="box8" class="box"></section>
+  
+        <section id="box9" class="box"></section>
+  
       </section>
-
-      <section id="box6" class="box"></section>
-
-    </section>
-
-    <section id="row3" class="row">
-
-      <section id="box7" class="box"></section>
-
-      <section id="box8" class="box"></section>
-
-      <section id="box9" class="box"></section>
-
-    </section>
-
+  
+    
   </main>
-
   <footer>
     <h1>FOOTER</h1>
   </footer>
   <script src="../../js/app.js"></script>
-  <script src="./ayah.js"></script>
+  <script src="ayah.js"></script>
 </body>
 </html>
