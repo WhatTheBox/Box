@@ -47,7 +47,7 @@ function handleClickOne(event) {
     figOneTwo.style.opacity = '100%';
     figOneTwo.style.pointerEvents = 'none';
     counterQuestOne++;
-  } 
+  }
   // else if(event.target.className === 'figure') {
   //   alertBox.style.visibility = 'visible';
   //   alertText.textContent = 'You\'re starting to think outside the box!!';
@@ -55,8 +55,8 @@ function handleClickOne(event) {
   // }
   if(counterQuestOne === 2){
     alertBox.style.visibility = 'visible';
-    alertText.textContent = 'MABROOK!!! these were the only two balls with the same color!';
-    alertButton.textContent = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!'
+    alertText.textContent = 'CONGRATS!!! these were the only two balls with the same color!';
+    alertButton.textContent = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!';
     console.log('before', counterQuestOne);
     counterQuestOne = 0;
     // score++;
@@ -80,7 +80,6 @@ function handleClickTwo(event) {
   buttonThree.textContent = aliAnswerTwo[2];
   const buttonFour = document.getElementById('button4');
   buttonFour.textContent = aliAnswerTwo[3];
-  
   console.log(event.target);
   console.log(event.target.id);
   console.log(event.target.className);
@@ -104,7 +103,7 @@ function handleClickTwo(event) {
     clickQuestTwo.removeEventListener('click', handleClickTwo);
     const clickQuestThree = document.getElementById('main');
     clickQuestThree.addEventListener('click', handleClickThree);
-  } 
+  }
   // else if(event.target.className === 'figure') {
   //   alertBox.style.visibility = 'visible';
   //   alertText.textContent = 'Nope!!';
@@ -161,8 +160,15 @@ function handleClickThree(event) {
       }
     }
   }
+  if(buttonCounter === 4){
+    alertBox.style.visibility = 'visible';
+    alertText.textContent = 'Not all questions in life have satisfying answers... but you gotta try as much as you can!!';
+    alertButton.textContent = 'WHAT\'S NEXT?';
+    if(event.target.id === 'alert-button'){
+      window.location = '../ayah/ayah.html';
+    }
+  }
 }
-
 
 
 
