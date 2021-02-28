@@ -70,10 +70,10 @@ footer {
 }
 
 
-#question { text-align: center;}
 
-#question img {padding: 35px; width: 700px;height: 350px; border-radius: 15px;} 
-#question p {font-weight: bold;padding: 5px;px; margin:15px;font-size: 25px;text-shadow: 0px 0px 7px white}
+#question { text-align: center;}
+#question img {padding: 35px; width: 700px;height: 350px;} 
+#question p {font-weight: bold;padding: 5px;margin:15px;font-size: 25px;}
 #question input {border-radius: 4px;font-weight: bold;padding:15px; box-shadow: 0 5px 0 white;cursor: pointer;transition: all .05s linear;margin: 15px;px;font-size: 20px;width: 500px;text-align: center;}
 #question button { border-radius: 4px;padding: 5px 15px 5px 15px; margin: 0 auto 0 auto;font-size: 20px;transition: 300ms;background-color: grey;color: white;border: none;font-weight: bold;}
 #message {padding:10px; margin: 15px;font-size: 20px;}
