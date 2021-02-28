@@ -1,5 +1,20 @@
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.row {
+  display: flex;
+  height: 30vh; 
+}
+
 #box5 {
+  background-color: black;
+  color: white;
   display: table;
+  border-radius: 0;
+  z-index: 1;
+  box-shadow: rgba(250, 250, 250, 0.4) 0 0 0 5px, rgba(250, 250, 250, 0.3) -5px 5px 0 5px, rgba(250, 250, 250, 0.2) -10px 10px 0 5px, rgba(250, 250, 250, 0.1) -15px 15px 0 5px;
 }
 
 #form {
@@ -14,21 +29,393 @@
   font-size: x-large;
 }
 
-.button {
+.button,
+#alert-button {
   display: block;
-  font-weight: bold;
+  border: 0;
+  background-color: grey;
+  /* border-radius: 4px; */
+  box-shadow: 0 5px 0 white;
+  color: #fff;
+  cursor: pointer;
   font-size: large;
   margin: 0 auto 0 auto;
-  border: none;
-  background-color: grey;
-  color: white;
-  padding: 5px 15px 5px 15px;
-  transition: 300ms;
-}
-.button:hover {
-  background-color: black;
-  transition: 300ms;
-}
-.button:focus {
   outline: 0;
+  /* padding: 12px 20px; */
+  /* padding: 10px; */
+  transition: all .05s linear;
+}
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 0 white;
+  transform: translateY(3px);
+}
+
+/* the because class is for the buttons on the third question */
+.because {
+  box-shadow: 0 2px 0 white;
+  transform: translateY(3px);
+}
+
+#alert {
+  visibility:hidden;
+  display: table;
+  position: fixed;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -250px;
+  z-index: 2;
+  box-shadow: rgba(250, 250, 250, 0.4) 0 0 0 5px, rgba(250, 250, 250, 0.3) -5px 5px 0 5px, rgba(250, 250, 250, 0.2) -10px 10px 0 5px, rgba(250, 250, 250, 0.1) -15px 15px 0 5px;
+}
+#alert-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+#alert-text {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.figure:hover {
+  cursor: pointer;
+}
+
+/* ball 1 */
+@keyframes xAxis1 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(850px);
+  }
+}
+@keyframes yAxis1 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(125px);
+  }
+}
+#fake1 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis1 5s infinite ease-out;
+}
+#fig1 {
+  background-color: aqua;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis1 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig1:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig1-2 {
+  background-color: aqua;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis1 5s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig1-2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 2 */
+@keyframes xAxis2 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(750px);
+  }
+}
+@keyframes yAxis2 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(15px);
+  }
+}
+#fake2 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis2 5s infinite ease-out;
+}
+#fig2 {
+  background-color: magenta;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis2 3s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 3 */
+@keyframes xAxis3 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis3 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
+#fake3 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis3 5s infinite ease-out;
+}
+#fig3 {
+  background-color: yellow;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis3 7s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig3:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 4 */
+@keyframes xAxis4 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis4 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
+#fake4 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis4 5s infinite ease-out;
+}
+#fig4 {
+  background-color: tomato;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis4 2s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig4:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 6 */
+@keyframes xAxis6 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(450px);
+  }
+}
+@keyframes yAxis6 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(350px);
+  }
+}
+#fake6 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis6 2s infinite ease-out;
+}
+#fig6 {
+  background-color:deepskyblue;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis6 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig6:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 7 */
+@keyframes xAxis7 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(650px);
+  }
+}
+@keyframes yAxis7 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(100px);
+  }
+}
+#fake7 {
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis7 10s infinite ease-out;
+}
+#fig7 {
+  background-color:violet;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis7 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig7:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 8 */
+@keyframes xAxis8 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(400px);
+  }
+}
+@keyframes yAxis8 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(25px);
+  }
+}
+#fake8 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: yAxis8 3s infinite ease-out;
+}
+#fig8-1 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 6s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-1:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig8-2 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 5s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-2:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+#fig8-3 {
+  background-color: red;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: xAxis8 4s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig8-3:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
+}
+
+
+/* ball 9 */
+@keyframes xAxis9 {
+  50% {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(100px);
+  }
+}
+@keyframes yAxis9 {
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(50px);
+  }
+}
+#fake9 {
+  /* background: tomato; */
+  opacity: 75%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: xAxis9 5s infinite ease-out;
+}
+#fig9 {
+  background-color:lawngreen;
+  opacity: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px;
+  height: 100px;
+  width: 100px;
+  animation: yAxis9 3s infinite ease-in;
+  transition: 200ms ease-in-out;
+}
+#fig9:hover {
+  opacity: unset;
+  transition: 200ms ease-in-out;
 }
