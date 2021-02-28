@@ -3,11 +3,26 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  font-family: 'Courier New', Courier, monospace;
+}
+#home {
+  text-decoration: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+#level-tracker {
+  font-size: x-large;
+  float: right;
+  padding-right: 50px;
+}
+
 .row {
   display: flex;
   height: 30vh; 
 }
-
 #box5 {
   background-color: black;
   color: white;
@@ -51,11 +66,6 @@ body {
   transform: translateY(3px);
 }
 
-/* the because class is for the buttons on the third question */
-.because {
-  box-shadow: 0 2px 0 white;
-  transform: translateY(3px);
-}
 
 #alert {
   visibility:hidden;
@@ -418,4 +428,8 @@ body {
 #fig9:hover {
   opacity: unset;
   transition: 200ms ease-in-out;
+}
+
+footer {
+  margin-top: 200px;
 }

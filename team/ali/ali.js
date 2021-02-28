@@ -11,6 +11,12 @@ const aliAnswerThree = aliAnswers[2];
 console.log(aliAnswerOne);
 
 
+//level
+let level = 1;
+const levelEl = document.getElementById('level');
+levelEl.textContent = level;
+localStorage.setItem('level', JSON.stringify(level));
+
 //alert box
 const alertBox = document.getElementById('alert');
 const alertText = document.getElementById('alert-text');
@@ -70,6 +76,11 @@ function handleClickOne(event) {
 
 //second question
 function handleClickTwo(event) {
+  
+  level = 2;
+  levelEl.textContent = level;
+  localStorage.setItem('level', JSON.stringify(level));
+
   const labelEl = document.getElementById('label');
   labelEl.textContent = 'What color is the sun??!';
   const buttonOne = document.getElementById('button1');
@@ -115,6 +126,11 @@ function handleClickTwo(event) {
 let figureCounter = 0;
 let buttonCounter = 0;
 function handleClickThree(event) {
+  
+  level = 3;
+  levelEl.textContent = level;
+  localStorage.setItem('level', JSON.stringify(level));
+  
   const labelEl = document.getElementById('label');
   labelEl.textContent = 'Why??';
   const buttonOne = document.getElementById('button1');
@@ -162,7 +178,7 @@ function handleClickThree(event) {
   }
   if(buttonCounter === 4){
     alertBox.style.visibility = 'visible';
-    alertText.textContent = 'Not all questions in life have satisfying answers... but you gotta try as much as you can!!';
+    alertText.textContent = 'Some questions in life have answers... some don\'t... but if you don\'t try... you\'ll never know!!';
     alertButton.textContent = 'WHAT\'S NEXT?';
     if(event.target.id === 'alert-button'){
       window.location = '../ayah/ayah.html';
