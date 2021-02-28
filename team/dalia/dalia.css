@@ -1,60 +1,84 @@
-#box5 {
-  display: table;
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-#form {
+header {
+  color: white;
+  background-color: black;
+  padding: 30px;
+  /* height: 10vh; */
+  text-align: center;
+  /* position: fixed; */
+  width: 100%;
+}
+
+.box {
+  border: solid black;  
+  /* background: black; */
+  flex: 33%;
+  margin: 20px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.row {
+  display: flex;
+  height: 35vh; 
+}
+
+#box1 p {
+  display: inline;
+}
+#box2 img {
+  transform: scale(.75);
+  object-position: center center;
+}
+
+footer {
+  clear: both;
+  color: white;
+  background-color: black;
   padding: 30px;
   text-align: center;
-  display: table-cell;
-}
-
-#label {
-  display: block;
-  font-weight: bold;
-  font-size: x-large;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .button,
 #alert-button {
   display: block;
-  /* font-weight: bold; */
+  border: 0;
+  background-color: grey;
+  /* border-radius: 4px; */
+  box-shadow: 0 5px 0 white;
+  color: #fff;
+  cursor: pointer;
   font-size: large;
   margin: 0 auto 0 auto;
-  border: none;
-  background-color: grey;
-  color: white;
-  padding: 5px 15px 5px 15px;
-  transition: 300ms;
-}
-.button:hover,
-#alert-button {
-  background-color: black;
-  transition: 300ms;
-}
-.button:focus,
-#alert-button {
   outline: 0;
+  /* padding: 12px 20px; */
+  /* padding: 10px; */
+  transition: all .05s linear;
+}
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 0 white;
+  transform: translateY(3px);
 }
 
 
-#alert {
-  visibility: hidden;
-  display: table;
-  position: fixed;
-  text-align: center;
-  width: 500px;
-  height: 500px;
-  background-color: burlywood;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  margin-left: -250px;
-}
-#alert-box {
-  display: table-cell;
-  vertical-align: middle;
-}
-#alert-text {
-  font-weight: bold;
-  font-size: x-large;
-}
+#question { text-align: center;}
+
+#question img {padding: 35px; width: 700px;height: 350px; border-radius: 15px;} 
+#question p {font-weight: bold;padding: 5px;px; margin:15px;font-size: 25px;text-shadow: 0px 0px 7px white}
+#question input {border-radius: 4px;font-weight: bold;padding:15px; box-shadow: 0 5px 0 white;cursor: pointer;transition: all .05s linear;margin: 15px;px;font-size: 20px;width: 500px;text-align: center;}
+#question button { border-radius: 4px;padding: 5px 15px 5px 15px; margin: 0 auto 0 auto;font-size: 20px;transition: 300ms;background-color: grey;color: white;border: none;font-weight: bold;}
+#message {padding:10px; margin: 15px;font-size: 20px;}
+#Next {display: none;}
+
+
+
+
