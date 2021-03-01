@@ -7,6 +7,21 @@ body{
   margin: 0;
 }
 
+header {
+  font-family: 'Courier New', Courier, monospace;
+}
+#home {
+  text-decoration: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+#level-tracker {
+  font-size: x-large;
+  float: right;
+  padding-right: 50px;
+}
 
 #form input[type='radio'] {
   visibility: hidden;
