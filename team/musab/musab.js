@@ -8,7 +8,11 @@ box2.onclick = function () {
 
 box5.onclick = function () {
   document.getElementById('alert').style.visibility = 'visible';
+  document.getElementById('alert-text').innerHTML='Did you get the idea ? <br> the box is empty <br> thats was your final hint';
 };
+
+
+
 tryAgain.onclick =function(){
   document.getElementById('alert').style.visibility = 'hidden';
 };
