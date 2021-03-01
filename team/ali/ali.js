@@ -162,7 +162,7 @@ function handleClickThree(event) {
       if(event.target.id === `button${i}`){
         const buttonEl = document.getElementById(`button${i}`);
         buttonEl.style.transform = 'translateY(3px)';
-        buttonEl.style.boxShadow = '0 2px 0 white';
+        buttonEl.style.boxShadow = '0 2px 0 var(--tertiary)';
         buttonCounter++;
         console.log(buttonCounter);
       }
