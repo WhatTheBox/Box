@@ -11,16 +11,28 @@ function Form(label, buttonOne, buttonTwo, buttonThree, buttonFour) {
 Form.all = [];
 
 Form.prototype.render = function () {
-  const labelEl = document.getElementById('label');
-  labelEl.textContent = this.label;
-  const buttonOne = document.getElementById('button1');
-  buttonOne.textContent = this.buttonOne;
-  const buttonTwo = document.getElementById('button2');
-  buttonTwo.textContent = this.buttonTwo;
-  const buttonThree = document.getElementById('button3');
-  buttonThree.textContent = this.buttonThree;
-  const buttonFour = document.getElementById('button4');
-  buttonFour.textContent = this.buttonFour;
+  // const labelEl = document.getElementById('label');
+  // labelEl.textContent = this.label;
+  // const buttonOne = document.getElementById('button1');
+  // buttonOne.textContent = this.buttonOne;
+  // const buttonTwo = document.getElementById('button2');
+  // buttonTwo.textContent = this.buttonTwo;
+  // const buttonThree = document.getElementById('button3');
+  // buttonThree.textContent = this.buttonThree;
+  // const buttonFour = document.getElementById('button4');
+  // buttonFour.textContent = this.buttonFour;
+
+  const objValues = Object.values(this);
+  console.log('values', objValues);
+  for (let i = 0; i < objValues.length; i++) {
+    if(i === 0){
+      const labelEl = document.getElementById('label');
+      labelEl.textContent = this.label;
+    } else {
+      const button = document.getElementById(`button${i}`);
+      button.textContent = objValues[i];
+    }
+  }
 };
 
 const qOne = new Form('1 + 1 =', '2', '-77', '55', '2');
