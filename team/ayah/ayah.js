@@ -86,7 +86,7 @@ function handleOne(event){
       color++;
       for (let i = 1; i < 5; i++) {
         const white = document.getElementById(`button${i}`);
-        white.style.backgroundColor ='white';
+        white.style.backgroundColor ='#0CCD58'; //changed to green to match final button color
       }
     }
   } else if(event.target.className === 'button'){
@@ -123,7 +123,7 @@ function handleTwo(event){
       colorB++;
       for (let i = 1; i < 5; i++) {
         const white = document.getElementById(`button${i}`);
-        white.style.backgroundColor ='white';
+        white.style.backgroundColor ='#0CCD58'; //changed to green to match final button color
       }
     }
   } else if(event.target.className === 'button'){
