@@ -1,4 +1,12 @@
+'use strict';
 
+let level=JSON.parse(localStorage.getItem('level'));
+if (level !== 17){
+  level=17;
+}
+localStorage.setItem('level',JSON.stringify(level));
+const levelEl=document.getElementById('level');
+levelEl.textContent=level;
 
 let box5 = document.getElementById('box5');
 let tryAgain = document.getElementById('alert-button');
@@ -21,7 +29,8 @@ box2.onclick = function () {
   document.getElementById('alert-text').innerHTML = 'you have done the impossible, you should be proud of your self';
   tryAgain.onclick = function () {
     document.getElementById('alert').style.visibility = 'hidden';
-
+    level++;
+    localStorage.setItem('level',JSON.stringify(level));
     window.location = '/team/musab/musab1.html';
   };
 

@@ -35,7 +35,14 @@
 // // }
 // 1
 
-
+let level=JSON.parse(localStorage.getItem('level'));
+if (level !== 19){
+  level=19;
+}
+localStorage.setItem('level',JSON.stringify(level));
+const levelEl=document.getElementById('level');
+levelEl.textContent=level;
+localStorage.setItem('level',JSON.stringify(level));
 
 
 
@@ -65,12 +72,12 @@ function setColor() {
 let myNoler = setInterval(newNolor, 150);
 function newNolor() {
   let y = document.getElementById('heder1');
-  y.style.color = y.style.color === 'red' ? 'white' : 'red';
+  // y.style.color = y.style.color === 'red' ? 'white' : 'red';
 }
 let myFoler = setInterval(newFolor, 30);
 function newFolor() {
   let y = document.getElementById('footer');
-  y.style.color = y.style.color === 'red' ? 'white' : 'red';
+  // y.style.color = y.style.color === 'red' ? 'white' : 'red';
 }
 
 let myYoler = setInterval(newYolor, 150);
@@ -114,7 +121,7 @@ function timerExp() {
 
   if (timeLeft === 0) {
     onTimesUp();
-  } else if (timeLeft === 1195) {
+  } else if (timeLeft === 1170) {
     let tryAgain = document.getElementById('alert-button');
     document.getElementById('alert').style.visibility = 'visible';
     document.getElementById('alert-text').innerHTML = 'the game is done ';

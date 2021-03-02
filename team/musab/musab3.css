@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
+  /* font-family: Gotham Rounded, sans-serif; */
   font-weight: normal;
 }
 
@@ -67,6 +67,7 @@ main {
 }
 
 #demo {
+  clear: both;
   color: black;
 }
 
@@ -88,8 +89,9 @@ main {
 
 #img2 {
   position: absolute;
-  top: 120px;
+  /* top: 120px; */
   left: 750px;
+  
 }
 
 form {
