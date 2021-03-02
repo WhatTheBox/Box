@@ -1,10 +1,18 @@
+:root {
+  --primary: #000408;
+  --secondary: #0CCD58;
+  --tertiary: #0B6A26;
+  --light: #DFEFE2;
+  --dark: #000801;
+}
+
 body {
-  background-color: black;
+  background-color: var(--primary);
 }
 
 #home {
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
   font-family: 'Courier New', Courier, monospace;
   /* font-weight: bold; */
   font-size: xx-large;
@@ -24,12 +32,12 @@ body {
 }
 
 #box5 {
-  background-color: black;
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   display: table;
   border-radius: 0;
   z-index: 1;
-  box-shadow: rgba(250, 250, 250, 0.4) 0 0 0 5px, rgba(250, 250, 250, 0.3) -5px 5px 0 5px, rgba(250, 250, 250, 0.2) -10px 10px 0 5px, rgba(250, 250, 250, 0.1) -15px 15px 0 5px;
+  box-shadow: rgba(12, 205, 88, 0.4) 0 0 0 5px, rgba(12, 205, 88, 0.3) -5px 5px 0 5px, rgba(12, 205, 88, 0.2) -10px 10px 0 5px, rgba(12, 205, 88, 0.1) -15px 15px 0 5px;
 }
 
 #form {
@@ -47,19 +55,19 @@ body {
 .button {
   display: block;
   border: 0;
-  background-color: grey;
-  /* border-radius: 4px; */
-  box-shadow: 0 5px 0 white;
-  color: #fff;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  box-shadow: 0 5px 0 var(--tertiary);
+  color: var(--dark);
   cursor: pointer;
   font-size: large;
-  margin: 0 auto 0 auto;
+  font-weight: bold;
+  margin: 10px auto 10px auto;
   outline: 0;
-  /* padding: 12px 20px; */
-  /* padding: 10px; */
+  padding: 5px 20px 5px 20px;
   transition: all .05s linear;
 }
 .button:active {
-  box-shadow: 0 2px 0 white;
+  box-shadow: 0 2px 0 var(--tertiary);
   transform: translateY(3px);
 }

@@ -1,14 +1,46 @@
 'use strict';
 
-const aliQuestions = ['1 + 1 =', 'What color is the sun??', 'Why?'];
-const aliAnswers = [['2', '-77-', '55', '2'], ['Yellow Hello', 'Some Yellow', 'More Yellow', 'Don\'t Yellow At Me!'], ['because', 'because', 'because', 'because']];
-console.log(aliQuestions);
-console.log(aliAnswers);
+function Form(label, buttonOne, buttonTwo, buttonThree, buttonFour) {
+  this.label = label;
+  this.buttonOne = buttonOne;
+  this.buttonTwo = buttonTwo;
+  this.buttonThree = buttonThree;
+  this.buttonFour = buttonFour;
+  Form.all.push(this);
+}
+Form.all = [];
 
-const aliAnswerOne = aliAnswers[0];
-const aliAnswerTwo = aliAnswers[1];
-const aliAnswerThree = aliAnswers[2];
-console.log(aliAnswerOne);
+Form.prototype.render = function () {
+  // const labelEl = document.getElementById('label');
+  // labelEl.textContent = this.label;
+  // const buttonOne = document.getElementById('button1');
+  // buttonOne.textContent = this.buttonOne;
+  // const buttonTwo = document.getElementById('button2');
+  // buttonTwo.textContent = this.buttonTwo;
+  // const buttonThree = document.getElementById('button3');
+  // buttonThree.textContent = this.buttonThree;
+  // const buttonFour = document.getElementById('button4');
+  // buttonFour.textContent = this.buttonFour;
+
+  const objValues = Object.values(this);
+  console.log('values', objValues);
+  for (let i = 0; i < objValues.length; i++) {
+    if(i === 0){
+      const labelEl = document.getElementById('label');
+      labelEl.textContent = this.label;
+    } else {
+      const button = document.getElementById(`button${i}`);
+      button.textContent = objValues[i];
+    }
+  }
+};
+
+const qOne = new Form('1 + 1 =', '2', '-77', '55', '2');
+const qTwo = new Form('What color is the sun??!', 'Yellow Hello', 'Some Yellow', 'More Yellow', 'Don\'t Yellow At Me!');
+const qThree = new Form('Why????!!!!', 'because', 'because', 'because', 'because');
+
+console.log('Form', Form);
+console.log('Form.all', Form.all);
 
 
 //level
@@ -27,6 +59,7 @@ const alertButton = document.getElementById('alert-button');
 const clickQuestOne = document.getElementById('main');
 clickQuestOne.addEventListener('click', handleClickOne);
 let counterQuestOne = 0;
+qOne.render();
 
 function handleClickOne(event) {
   console.log(event.target);
@@ -54,11 +87,6 @@ function handleClickOne(event) {
     figOneTwo.style.pointerEvents = 'none';
     counterQuestOne++;
   }
-  // else if(event.target.className === 'figure') {
-  //   alertBox.style.visibility = 'visible';
-  //   alertText.textContent = 'You\'re starting to think outside the box!!';
-  //   alertButton.textContent = 'LEMME TRY AGAIN, BALEEZ!';
-  // }
   if(counterQuestOne === 2){
     alertBox.style.visibility = 'visible';
     alertText.textContent = 'CONGRATS!!! these were the only two balls with the same color!';
@@ -80,17 +108,8 @@ function handleClickTwo(event) {
   level = 2;
   levelEl.textContent = level;
   localStorage.setItem('level', JSON.stringify(level));
+  qTwo.render();
 
-  const labelEl = document.getElementById('label');
-  labelEl.textContent = 'What color is the sun??!';
-  const buttonOne = document.getElementById('button1');
-  buttonOne.textContent = aliAnswerTwo[0];
-  const buttonTwo = document.getElementById('button2');
-  buttonTwo.textContent = aliAnswerTwo[1];
-  const buttonThree = document.getElementById('button3');
-  buttonThree.textContent = aliAnswerTwo[2];
-  const buttonFour = document.getElementById('button4');
-  buttonFour.textContent = aliAnswerTwo[3];
   console.log(event.target);
   console.log(event.target.id);
   console.log(event.target.className);
@@ -115,11 +134,6 @@ function handleClickTwo(event) {
     const clickQuestThree = document.getElementById('main');
     clickQuestThree.addEventListener('click', handleClickThree);
   }
-  // else if(event.target.className === 'figure') {
-  //   alertBox.style.visibility = 'visible';
-  //   alertText.textContent = 'Nope!!';
-  //   alertButton.textContent = 'LEMME TRY AGAIN, BALEEZ!';
-  // }
 }
 
 //third question
@@ -130,18 +144,8 @@ function handleClickThree(event) {
   level = 3;
   levelEl.textContent = level;
   localStorage.setItem('level', JSON.stringify(level));
+  qThree.render();
   
-  const labelEl = document.getElementById('label');
-  labelEl.textContent = 'Why??';
-  const buttonOne = document.getElementById('button1');
-  buttonOne.textContent = aliAnswerThree[0];
-  const buttonTwo = document.getElementById('button2');
-  buttonTwo.textContent = aliAnswerThree[1];
-  const buttonThree = document.getElementById('button3');
-  buttonThree.textContent = aliAnswerThree[2];
-  const buttonFour = document.getElementById('button4');
-  buttonFour.textContent = aliAnswerThree[3];
-
   if(event.target.id === 'alert-button') {
     alertBox.style.visibility = 'hidden';
   }
@@ -170,7 +174,7 @@ function handleClickThree(event) {
       if(event.target.id === `button${i}`){
         const buttonEl = document.getElementById(`button${i}`);
         buttonEl.style.transform = 'translateY(3px)';
-        buttonEl.style.boxShadow = '0 2px 0 white';
+        buttonEl.style.boxShadow = '0 2px 0 var(--tertiary)';
         buttonCounter++;
         console.log(buttonCounter);
       }
