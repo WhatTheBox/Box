@@ -4,14 +4,21 @@
 }
 
 header {
-  color: white;
-  background-color: black;
-  padding: 30px;
-  /* height: 10vh; */
-  text-align: center;
-  /* position: fixed; */
-  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
 }
+#home {
+  text-decoration: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+#level-tracker {
+  font-size: x-large;
+  float: right;
+  padding-right: 50px;
+}
+
 
 .box {
   border: solid black;  
@@ -45,6 +52,7 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 0;
+  margin-top: 200px;
 }
 
 .button,

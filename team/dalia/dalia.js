@@ -1,5 +1,11 @@
 'use strict';
 
+//let level = JSON.parse(localStorage.getItem('level')); 
+let level =7;
+const levelEl = document.getElementById('level');
+levelEl.textContent = level;
+
+
 let image = document.getElementById('image');
 let question = document.getElementById('questionText');
 let answer = document.getElementById('input');
@@ -27,6 +33,10 @@ Quiz.prototype.checkAnswer = function () {
       message.innerHTML = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!';
       currentQ++;
       loadQuestion();
+      level++;
+      const levelEl = document.getElementById('level');
+      levelEl.textContent = level;
+      localStorage.setItem('level',JSON.stringify(level));
       break;
     }
     else {
@@ -38,7 +48,7 @@ Quiz.prototype.checkAnswer = function () {
 
 const question1 = new Quiz('What is the number of the parking spot covered by the car?', ['87'], 'dalia.img/q1.PNG','https://media3.giphy.com/media/18BKYnQ5Kc2re/giphy.gif');
 const question2 = new Quiz('In a two-sides street there are six houses red, blue ,white, green, yellow and pink . Three are in a row at each side. The red house is right of the middle and opposite to the green house. The blue house is left of the middle and opposite to the pink house.The green house is next to the yellow house. Where is the White House?'
-  , ['in washington dc','washington', 'USA', 'united states'],'dalia.img/background2.gif' ,'https://i1.wp.com/gonitsora.com/wp-content/uploads/2012/06/answer-bing-quizzes.jpg?fit=620%2C413&ssl=1');
+  , ['in washington dc','washington', 'usa', 'united states','america'],'dalia.img/background2.gif' ,'dalia.img/background22.gif');
 const question3 = new Quiz('In which direction the car is moving?', ['car is not moving, it has no wheels','car is not moving', 'not moving', 'stopped', 'no wheels'], 'dalia.img/q3.PNG','https://www.pwc.ie/images/2019/opposite-arrows-icon.gif');
 
 const questions = [question1, question2, question3];
@@ -55,7 +65,7 @@ function loadQuestion() {
     questions[currentQ].render();
   }else{
     ///TODO move to next page
-    window.location ='./dalia.html';
+    window.location ='../mohammad/mohammad.html';
   }
 }
 
