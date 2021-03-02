@@ -104,7 +104,7 @@ function handleClickOne(event) {
 
 //second question
 function handleClickTwo(event) {
-  
+
   level = 2;
   levelEl.textContent = level;
   localStorage.setItem('level', JSON.stringify(level));
@@ -140,12 +140,12 @@ function handleClickTwo(event) {
 let figureCounter = 0;
 let buttonCounter = 0;
 function handleClickThree(event) {
-  
+
   level = 3;
   levelEl.textContent = level;
   localStorage.setItem('level', JSON.stringify(level));
   qThree.render();
-  
+
   if(event.target.id === 'alert-button') {
     alertBox.style.visibility = 'hidden';
   }
