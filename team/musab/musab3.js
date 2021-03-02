@@ -67,7 +67,7 @@ function newNolor() {
   let y = document.getElementById('heder1');
   y.style.color = y.style.color === 'red' ? 'white' : 'red';
 }
-let myFoler = setInterval(newFolor, 150);
+let myFoler = setInterval(newFolor, 30);
 function newFolor() {
   let y = document.getElementById('footer');
   y.style.color = y.style.color === 'red' ? 'white' : 'red';
@@ -127,7 +127,7 @@ function timerExp() {
 
   if (timeLeft === 0) {
     onTimesUp();
-  } else if (timeLeft===1) {
+  } else if (timeLeft===1190) {
 
     window.location = './musab.html';}
 }
