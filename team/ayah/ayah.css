@@ -1,5 +1,39 @@
-#box5 {
+body{
+  background-image:url(https://64.media.tumblr.com/e463c7484d67b0a0f5b35deb08c087c5/tumblr_n4ftu3n7qe1twkrf5o1_1280.gif);
+  background-repeat: repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  font-family: 'Courier New', Courier, monospace;
+}
+#home {
+  text-decoration: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+#level-tracker {
+  font-size: x-large;
+  float: right;
+  padding-right: 50px;
+}
+
+#form input[type='radio'] {
+  visibility: hidden;
+}
+
+
+#quiz {
+  margin-top: -5%;
+  padding-top: 20px;
   display: table;
+  border: solid;
+  z-index: 1;
 }
 
 #form {
@@ -13,32 +47,36 @@
   font-weight: bold;
   font-size: x-large;
 }
+#question{
+  display:block;
+  font-weight: bold;
+  font-size: xx-large;
+}
 
 .button,
 #alert-button {
   display: block;
-  /* font-weight: bold; */
-  font-size: large;
+  border: 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 0 5px 0 black;
+  color: rgb(15, 15, 15);
+  cursor: pointer;
+  font-size: x-large;
   margin: 0 auto 0 auto;
-  border: none;
-  background-color: grey;
-  color: white;
-  padding: 5px 15px 5px 15px;
-  transition: 300ms;
-}
-.button:hover,
-#alert-button {
-  background-color: black;
-  transition: 300ms;
-}
-.button:focus,
-#alert-button {
   outline: 0;
+  /* padding: 12px 20px; */
+  transition: all .1s linear;
+}
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 0 rgb(0, 0, 0);
+  transform: translateY(3px);
 }
 
 
 #alert {
-  visibility: hidden;
+  visibility:hidden;
   display: table;
   position: fixed;
   text-align: center;
@@ -51,10 +89,22 @@
   margin-left: -250px;
 }
 #alert-box {
-  display: table-cell;
+  display:table-cell;
   vertical-align: middle;
 }
 #alert-text {
   font-weight: bold;
   font-size: x-large;
+}
+
+.box {
+  border: none;
+}
+.button{
+  margin-top: 10px;
+}
+.button,
+buttonD{
+  margin-bottom: 10px;
+
 }

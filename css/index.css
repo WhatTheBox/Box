@@ -1,5 +1,25 @@
+:root {
+  --primary: #000408;
+  --secondary: #0CCD58;
+  --tertiary: #0B6A26;
+  --light: #DFEFE2;
+  --dark: #000801;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+#home {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+
 .box {
-  border: solid black;  
+  border: none;  
   /* background: black; */
   flex: 33%;
   margin: 20px;
@@ -9,4 +29,45 @@
   display: flex;
   height: 33vh; 
   vertical-align: center;
+}
+
+#box5 {
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: table;
+  border-radius: 0;
+  z-index: 1;
+  box-shadow: rgba(12, 205, 88, 0.4) 0 0 0 5px, rgba(12, 205, 88, 0.3) -5px 5px 0 5px, rgba(12, 205, 88, 0.2) -10px 10px 0 5px, rgba(12, 205, 88, 0.1) -15px 15px 0 5px;
+}
+
+#form {
+  padding: 30px;
+  text-align: center;
+  display: table-cell;
+}
+
+.label {
+  display: block;
+  /* font-weight: bold; */
+  font-size: x-large;
+}
+
+.button {
+  display: block;
+  border: 0;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  box-shadow: 0 5px 0 var(--tertiary);
+  color: var(--dark);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  margin: 10px auto 10px auto;
+  outline: 0;
+  padding: 5px 20px 5px 20px;
+  transition: all .05s linear;
+}
+.button:active {
+  box-shadow: 0 2px 0 var(--tertiary);
+  transform: translateY(3px);
 }
