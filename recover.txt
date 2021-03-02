@@ -1,0 +1,756 @@
+blob: 1cf0c0d8e0f50eb684d1403017533ddf42bc77a9
+'use strict';
+
+//let level = JSON.parse(localStorage.getItem('level')); 
+let level =7;
+const levelEl = document.getElementById('level');
+levelEl.textContent = level;
+
+
+let image = document.getElementById('image');
+let question = document.getElementById('questionText');
+let answer = document.getElementById('input');
+let message = document.getElementById('message');
+
+
+function Quiz(question, answers, image,background) {
+  this.question = question;
+  this.answers = answers;
+  this.image = image;
+  this.background =background;
+}
+
+Quiz.prototype.render = function () {
+  image.src = this.image;
+  question.innerText = this.question;
+  document.body.style.backgroundImage = 'url('+this.background+')';
+  message.innerText = '';
+  answer.value = '';
+};
+
+Quiz.prototype.checkAnswer = function () {
+  for (let i = 0; i < this.answers.length; i++) {
+    if ( answer.value.toLowerCase().trim() === this.answers[i]) {
+      message.innerHTML = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!';
+      currentQ++;
+      loadQuestion();
+      level++;
+      const levelEl = document.getElementById('level');
+      levelEl.textContent = level;
+      localStorage.setItem('level',JSON.stringify(level));
+      break;
+    }
+    else {
+      message.innerHTML = 'Think outside the box, baleez.';
+    }
+  }
+};
+
+
+const question1 = new Quiz('What is the number of the parking spot covered by the car?', ['87'], 'dalia.img/q1.PNG','https://media3.giphy.com/media/18BKYnQ5Kc2re/giphy.gif');
+const question2 = new Quiz('In a two-sides street there are six houses red, blue ,white, green, yellow and pink . Three are in a row at each side. The red house is right of the middle and opposite to the green house. The blue house is left of the middle and opposite to the pink house.The green house is next to the yellow house. Where is the White House?'
+  , ['in washington dc','washington', 'usa', 'united states','america'],'dalia.img/background2.gif' ,'https://i.imgur.com/m1CnvTl.gif');
+const question3 = new Quiz('In which direction the car is moving?', ['car is not moving, it has no wheels','car is not moving', 'not moving', 'stopped', 'no wheels'], 'dalia.img/q3.PNG','https://www.pwc.ie/images/2019/opposite-arrows-icon.gif');
+
+const questions = [question1, question2, question3];
+let currentQ = 0;
+loadQuestion();
+
+let submit = document.getElementById('submitAnswer');
+submit.onclick = function () {
+  questions[currentQ].checkAnswer();
+};
+
+function loadQuestion() {
+  if(currentQ < questions.length){
+    questions[currentQ].render();
+  }else{
+    ///TODO move to next page
+    window.location ='../mohammad/mohammad.html';
+  }
+}
+
+function showAnswer() {
+  let ans = questions[currentQ].answers[0];
+  answer.value=ans;
+}
+
+let button = document.getElementById('showAnswerBtn');
+button.onclick = showAnswer;
+
+--------------------------------
+blob: 2f0073f10fa63511d7e195c74dd356f2dafef5f7
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  color: white;
+  background-color: black;
+  padding: 30px;
+  /* height: 10vh; */
+  text-align: center;
+  /* position: fixed; */
+  width: 100%;
+}
+
+.box {
+  border: solid black;  
+  /* background: black; */
+  flex: 33%;
+  margin: 20px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.row {
+  display: flex;
+  height: 35vh; 
+}
+
+#box1 p {
+  display: inline;
+}
+#box2 img {
+  transform: scale(.75);
+  object-position: center center;
+}
+
+footer {
+  clear: both;
+  color: white;
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.button,
+#alert-button {
+  display: block;
+<<<<<<< HEAD
+  border: 0;
+  background-color: grey;
+  /* border-radius: 4px; */
+  box-shadow: 0 5px 0 white;
+  color: #fff;
+  cursor: pointer;
+=======
+  /* font-weight: bold; */
+>>>>>>> main
+  font-size: large;
+  margin: 0 auto 0 auto;
+  outline: 0;
+  /* padding: 12px 20px; */
+  /* padding: 10px; */
+  transition: all .05s linear;
+}
+<<<<<<< HEAD
+.button:active,
+#alert-button:active {
+  box-shadow: 0 2px 0 white;
+  transform: translateY(3px);
+}
+
+
+#question { text-align: center;}
+
+#question img {padding: 35px; width: 700px;height: 350px; border-radius: 15px;} 
+#question p {font-weight: bold;padding: 5px;px; margin:15px;font-size: 25px;text-shadow: 0px 0px 7px white}
+#question input {border-radius: 4px;font-weight: bold;padding:15px; box-shadow: 0 5px 0 white;cursor: pointer;transition: all .05s linear;margin: 15px;px;font-size: 20px;width: 500px;text-align: center;}
+#question button { border-radius: 4px;padding: 5px 15px 5px 15px; margin: 0 auto 0 auto;font-size: 20px;transition: 300ms;background-color: grey;color: white;border: none;font-weight: bold;}
+#message {padding:10px; margin: 15px;font-size: 20px;}
+#Next {display: none;}
+
+
+
+
+=======
+.button:hover,
+#alert-button {
+  background-color: black;
+  transition: 300ms;
+}
+.button:focus,
+#alert-button {
+  outline: 0;
+}
+
+
+#alert {
+  visibility: hidden;
+  display: table;
+  position: fixed;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  background-color: burlywood;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+}
+#alert-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+#alert-text {
+  font-weight: bold;
+  font-size: x-large;
+}
+>>>>>>> main
+
+--------------------------------
+blob: 4b9de34a3ae2b6c007c20177801e10f13a3bb74a
+'use strict';
+
+let level =JSON.parse(localStorage.getItem('level'));
+if (level !== 7){
+  level =7;
+}
+const levelEl = document.getElementById('level');
+levelEl.textContent = level;
+
+
+let question = document.getElementById('label');
+let option1 = document.getElementById('button1');
+let option2 = document.getElementById('button2');
+let option3 = document.getElementById('button3');
+let option4 = document.getElementById('button4');
+
+const alertBox = document.getElementById('alert');
+const alertButton = document.getElementById('alert-button');
+alertButton.addEventListener('click', alertButtonAction);
+
+const alertCorrectBox = document.getElementById('alertCorrect');
+const alertCorrectButton = document.getElementById('alertCorrect-button');
+alertCorrectButton.addEventListener('click', alertCorrectButtonAction);
+
+option1.addEventListener('click', clickedButtonFunction);
+option2.addEventListener('click', clickedButtonFunction);
+option3.addEventListener('click', clickedButtonFunction);
+option4.addEventListener('click', clickedButtonFunction);
+
+function clickedButtonFunction (event){
+  let selectedAnswer =event.target.textContent;
+  questions [currentQ].checkAnswer (selectedAnswer);
+}
+
+function alertButtonAction (){
+  alertBox.style.visibility = 'hidden';
+};
+
+function alertCorrectButtonAction (){
+    loadQuestion();
+    alertCorrectBox.style.visibility='hidden';
+}
+
+Quiz.prototype.checkAnswer = function (answer) {
+  if ( answer === this.correctAnswer) {
+    level++;
+    currentQ++;
+    alertCorrectBox.style.visibility='visible';
+    const levelEl = document.getElementById('level');
+    levelEl.textContent = level;
+    localStorage.setItem('level',JSON.stringify(level));
+  }
+  else {
+    alertBox.style.visibility = 'visible';
+  }
+};
+
+
+function Quiz(question,option1,option2,option3,option4,correctAnswer) {
+  this.question = question;
+  this.option1 = option1;
+  this.option2 = option2;
+  this.option3 = option3;
+  this.option4 = option4;
+  this.correctAnswer = correctAnswer;
+}
+
+Quiz.prototype.render = function () {
+  question.innerText = this.question;
+  option1.textContent=this.option1;
+  option2.textContent=this.option2;
+  option3.textContent=this.option3;
+  option4.textContent=this.option4;
+};
+
+
+const question1 = new Quiz('What is 3/7 chicken, 2/3 cat and 2/4 goat?','Childbirth','Chiffon','Chicago','Chipmunk','Chicago');
+const question2 = new Quiz('Don not be fooled, it is not thunder. Staying put would be a blunder.', 'Stampede','Horses','Earthquake','Arrows','Stampede');
+const question3 = new Quiz('Need a hand, well you just wait. We will lend a hand, we each have eight.', 'Octopuses','Spiders','Ants','Roaches','Spiders');
+
+console.log(question1);
+console.log(question2);
+console.log(question3);
+question1.render();
+
+const questions = [question1, question2, question3];
+let currentQ = 0;
+loadQuestion();
+
+function loadQuestion() {
+  if(currentQ < questions.length){
+    questions[currentQ].render();
+  }else{
+    ///TODO move to next page
+    window.location ='../mohammad/mohammad.html';
+  }
+}
+
+
+--------------------------------
+blob: 5abd3d34da93e6b81d07ad506c2e9c1a7b15ebd9
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="./ali.css">
+  <title>Box</title>
+</head>
+<body>
+  <header>
+    <h1><a href="../../index.html" id="home">WHAT THE BOX</a></h1>
+    <p id="level-tracker">level <span id="level"></span>/15</p>
+  </header>
+
+  <main id="main">
+    <section id="alert">
+      <section id="alert-box">
+        <p id="alert-text">Think outside the box, baleez.</p>
+        </br>
+        <button id="alert-button">I WILL THINK OUTSIDE THE BOX</button>
+      </section>
+    </section>
+
+    <section id="row1" class="row">
+
+      <section id="box1" class="box">
+        <section id="fake1">
+          <figure id="fig1" class="figure"></figure>
+          <figure id="fig1-2" class="figure"></figure>
+        </section>
+      </section>
+
+      <section id="box2" class="box">
+        <section id="fake2">
+          <figure id="fig2" class="figure"></figure>
+        </section>
+      </section>
+
+      <section id="box3" class="box">
+        <section id="fake3">
+          <figure id="fig3" class="figure"></figure>
+        </section>
+      </section>
+    
+      
+    </section>
+    
+    <section id="row2" class="row">
+      
+      <section id="box4" class="box">
+        <section id="fake4">
+          <figure id="fig4" class="figure"></figure>
+        </section>
+      </section>
+      
+      <!-- THE FORM -->
+      <section id="box5" class="box">
+        <fieldset id="form">
+          <label for="answer" id="label"></label>
+          </br>
+          <button id="button1" class="button"></button>
+          </br>
+          <button id="button2" class="button"></button>
+          </br>
+          <button id="button3" class="button"></button>
+          </br>
+          <button id="button4" class="button"></button>
+        </fieldset> 
+      </section>
+      <!-- FORM END -->
+      
+      <section id="box6" class="box">
+        <section id="fake6">
+          <figure id="fig6" class="figure"></figure>
+        </section>
+      </section>
+
+    </section>
+
+    <section id="row3" class="row">
+
+      <section id="box7" class="box">
+        <section id="fake7">
+          <figure id="fig7" class="figure"></figure>
+        </section>
+      </section>
+
+      <section id="box8" class="box">
+        <section id="fake8">
+          <figure id="fig8-1" class="figure"></figure>
+          <figure id="fig8-2" class="figure"></figure>
+          <figure id="fig8-3" class="figure"></figure>
+        </section>
+      </section>
+
+      <section id="box9" class="box">
+        <section id="fake9">
+          <figure id="fig9" class="figure"></figure>
+        </section>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <h1>WHAT THE BOX
+    </br></br>Developed by
+    </br>Ayah Abu Hammad
+    </br>Dalia Abdelghani
+    </br>Mohammad Amer
+    </br>Mus'ab Al-Omari
+    </br>Ali Sartawi
+    </br></br>&copy; 2021 201-project</h1>
+  </footer>
+  <script src="../../js/app.js"></script>
+  <script src="./ali.js"></script>
+</body>
+</html>
+--------------------------------
+blob: 03f2c7b51749d0febb24c3e7ac12a7a93b0e0cc4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="./dalia.css">
+  <title>Box</title>
+</head>
+<body>
+  <header>
+    <h1><a href="../../index.html" id="home">WHAT THE BOX</a></h1>
+    <p id="level-tracker">level <span id="level"></span>/15</p>
+  </header>
+
+  <main id="main">
+
+    <section class="alert" id="alert">
+      <section class="alert-box" id="alert-box">
+        <p class="alert-text" id="alert-text">Think outside the box, baleez.</p>
+        </br>
+        <button id="alert-button">I WILL THINK OUTSIDE THE BOX</button>
+      </section>
+    </section>
+    <section class="alert" id="alertCorrect">
+      <section class="alert-box" id="alertCorrect-box">
+        <p  class="alert-text" id="alertCorrect-text">Correct</p>
+        </br>
+        <button class="alert-button" id="alertCorrect-button">Next</button>
+      </section>
+    </section>
+
+
+  <!---row 1-->
+    <section id="row1" class="row">
+      <section id="box1" class="box">
+      </section>
+      
+      <section id="box2" class="box">
+      </section>
+      
+      <section id="box3" class="box">
+      </section>
+      
+    </section>
+    
+    <!---row 2-->
+    <section id="row2" class="row">
+      
+      <section id="box4" class="box">
+      </section>
+      </section>
+      
+      <!-- THE FORM -->
+      <section id="box5" class="box">
+        <fieldset id="form">
+          <label for="answer" id="label"></label>
+          </br>
+          <button id="button1" class="button" value=""></button>
+          </br>
+          <button id="button2" class="button" value=""></button>
+          </br>
+          <button id="button3" class="button" value=""></button>
+          </br>
+          <button id="button4" class="button" value=""></button>
+          </fieldset> 
+          <p id ='message'></p>
+      </section>
+      <!-- FORM END -->
+      
+      <section id="box6" class="box">
+      </section>
+    </section>
+
+    </section>
+
+    <!---row 3-->
+    <section id="row3" class="row">
+      <section id="box7" class="box">
+      </section>
+      
+      <section id="box8" class="box">
+      </section>
+      
+      <section id="box9" class="box">
+      </section>
+      
+    </section>
+
+  </main>
+
+  <footer>
+    <h1>WHAT THE BOX
+    </br></br>Developed by
+    </br>Ayah Abu Hammad
+    </br>Dalia Abdelghani
+    </br>Mohammad Amer
+    </br>Mus'ab Al-Omari
+    </br>Ali Sartawi
+    </br></br>&copy; 2021 201-project</h1>
+  </footer>
+  <script src="../../js/app.js"></script>
+  <script src="./dalia.js"></script>
+
+</body>
+</html>
+--------------------------------
+blob: 1477834b62dfc24eb693c6d6557ad49a1316326f
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="./dalia.css">
+  <title>Box</title>
+</head>
+<body>
+ 
+  <header>
+    <h1>BOX</h1>
+  </header>
+
+  <main>
+
+<<<<<<< HEAD
+  <section id=question>
+    <img src ="" id="image"/>
+    <p id="questionText"></p>
+    <input type ="text" id="input"> <button id="submitAnswer">Submit</button><br>
+    <button id="showAnswerBtn" class="button">Show the answer</button>
+    <p id="message"></p> <br>
+  </section>
+=======
+    <section id="alert">
+      <section id="alert-box">
+        <p id="alert-text">ALERT</p>
+        </br>
+        <button id="alert-button">TRY AGAIN</button>
+      </section>
+    </section>
+
+    <section id="row1" class="row">
+
+      <section id="box1" class="box"></section>
+
+      <section id="box2" class="box"></section>
+
+      <section id="box3" class="box"></section>
+
+    </section>
+
+    <section id="row2" class="row">
+
+      <section id="box4" class="box"></section>
+
+      <section id="box5" class="box">
+        <fieldset id="form">
+          <label for="answer" id="label"></label>
+          </br>
+          <button id="button1" class="button"></button>
+          </br>
+          <button id="button2" class="button"></button>
+          </br>
+          <button id="button3" class="button"></button>
+          </br>
+          <button id="button4" class="button"></button>
+        </fieldset>
+      </section>
+
+      <section id="box6" class="box"></section>
+
+    </section>
+
+    <section id="row3" class="row">
+
+      <section id="box7" class="box"></section>
+
+      <section id="box8" class="box"></section>
+
+      <section id="box9" class="box"></section>
+
+    </section>
+>>>>>>> main
+
+  </main>
+  <embed src="dalia.img/music_preview.mp3" loop="true" autostart="true" width="2" height="0">
+  <footer>
+    <h1>FOOTER</h1>
+  </footer>
+  
+  <script src="../../js/app.js"></script>
+  <script src="./dalia.js"></script>
+
+</body>
+</html>
+--------------------------------
+blob: c1cbcc846c8a964996916540b865a463bb5338c9
+:root {
+  --primary: #000408;
+  --secondary: #0CCD58;
+  --tertiary: #0B6A26;
+  --light: #DFEFE2;
+  --dark: #000801;
+}
+
+body {
+  background-color: var(--primary);
+  overflow-x: hidden;
+}
+
+header {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--primary);
+}
+#home {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+#level-tracker {
+  color: #0CCD58;
+  font-size: x-large;
+  float: right;
+  padding-right: 50px;
+}
+
+.row {
+  display: flex;
+  height: 30vh; 
+}
+.box {
+  border:none;
+}
+
+#box5 {
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: table;
+  border-radius: 0;
+  z-index: 1;
+  box-shadow: rgba(12, 205, 88, 0.4) 0 0 0 5px, rgba(12, 205, 88, 0.3) -5px 5px 0 5px, rgba(12, 205, 88, 0.2) -10px 10px 0 5px, rgba(12, 205, 88, 0.1) -15px 15px 0 5px;
+}
+
+#form {
+  padding: 30px;
+  text-align: center;
+  display: table-cell;
+}
+
+#label {
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.button,
+.alert-button {
+  display: block;
+  border: 0;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  padding: 5px 20px 5px 20px;
+  box-shadow: 0 5px 0 var(--tertiary);
+  color: var(--dark);
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bold;
+  margin: 0 auto 0 auto;
+  outline: 0;
+  /* padding: 12px 20px; */
+  /* padding: 10px; */
+  transition: all .05s linear;
+}
+.button:active,
+.alert-button:active {
+  box-shadow: 0 2px 0 var(--tertiary);
+  transform: translateY(3px);
+}
+
+
+.alert {
+  visibility:hidden;
+  display: table;
+  position: fixed;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  background-color: var(--primary);
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -250px;
+  z-index: 2;
+  box-shadow: rgba(12, 205, 88, 0.4) 0 0 0 5px, rgba(12, 205, 88, 0.3) -5px 5px 0 5px, rgba(12, 205, 88, 0.2) -10px 10px 0 5px, rgba(12, 205, 88, 0.1) -15px 15px 0 5px;
+}
+.alert-box {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 30px;
+}
+.alert-text {
+  padding: 10px;
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+footer {
+  margin-top: 200px;
+  background-color: var(--primary);
+  color: #0CCD58;
+}
+
+
+--------------------------------
