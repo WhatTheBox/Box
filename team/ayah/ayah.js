@@ -1,7 +1,7 @@
 'use strict';
-// Local Storage
+// LocalStorage (level)
 let level = JSON.parse(localStorage.getItem('level'));
-if(level > 4 ){
+if(level !== 4 ){
   level = 4;
 }
 const levelEl = document.getElementById('level');
@@ -10,11 +10,15 @@ localStorage.setItem('level', JSON.stringify(level));
 
 // eslint-disable-next-line no-unused-vars
 const quiz = document.getElementById('quiz');
+// eslint-disable-next-line no-unused-vars
 const question = document.getElementById('question');
-
+// eslint-disable-next-line no-unused-vars
 const button1 = document.getElementById('buttonA');
+// eslint-disable-next-line no-unused-vars
 const button2 = document.getElementById('buttonB');
+// eslint-disable-next-line no-unused-vars
 const button3 = document.getElementById('buttonC');
+// eslint-disable-next-line no-unused-vars
 const button4 = document.getElementById('buttonD');
 
 
@@ -28,7 +32,7 @@ function Quiz(label , button1, button2, button3, button4){
 
 }
 
-const qOne =new Quiz('There is four brothers South, North and East, What is the fourth brother name','West', 'what','ENSW','SouthWest' );
+const qOne =new Quiz('There is four brothers South, North and East, What is the fourth brother name','West', 'what','Westfour','SouthWest' );
 const qTwo = new Quiz('What is the letter has most water in it ?','W','E','L','C');
 const qThree = new Quiz('Which word is written incorrectly in a dictionary?','incorrectly','dictionary','Literally','Whom');
 console.log(qOne);
@@ -60,6 +64,7 @@ Quiz.prototype.render = function(){
 
 qOne.render();
 // Question One
+
 let color=0;
 const questionOne = document.getElementById('quiz');
 questionOne.addEventListener('click',handleOne);
@@ -75,6 +80,7 @@ function handleOne(event){
     level++;
     const levelEl = document.getElementById('level');
     levelEl.textContent = level;
+    //add local storage
     localStorage.setItem('level', JSON.stringify(level));
     if(color === 0){
       color++;
@@ -89,6 +95,7 @@ function handleOne(event){
         const red = document.getElementById(`button${i}`);
         red.style.backgroundColor ='red';
       }
+
     }
 
   }
