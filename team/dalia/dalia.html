@@ -10,35 +10,96 @@
   <title>Box</title>
 </head>
 <body>
- 
   <header>
     <h1><a href="../../index.html" id="home">WHAT THE BOX</a></h1>
     <p id="level-tracker">level <span id="level"></span>/15</p>
   </header>
 
-  <main>
+  <main id="main">
+     <!--wrong answer alert-->
+    <section class="alert" id="alert">
+      <section class="alert-box" id="alert-box">
+        <p class="alert-text" id="alert-text">Think outside the box, baleez.</p>
+        </br>
+        <button id="alert-button" class="alert-button">I WILL THINK OUTSIDE THE BOX</button>
+      </section>
+    </section>
 
-    <section id=question>
-      <img src ="" id="image"/>
-      <p id="questionText"></p>
-      <input type ="text" id="input"> <button id="submitAnswer">Submit</button><br>
-      <button id="showAnswerBtn" class="button">Show the answer</button>
-      <p id="message"></p> <br>
+    <!--correct answer alert-->
+    <section class="alert" id="alertCorrect">
+      <section class="alert-box" id="alertCorrect-box">
+        <p  class="alert-text" id="alertCorrect-text">CORRECT</p>
+        </br>
+        <button class="alert-button" id="alertCorrect-button">NEXT</button>
+      </section>
+    </section>
+
+
+  <!---row 1-->
+    <section id="row1" class="row">
+      <section id="box1" class="box">
+      </section>
+
+      <section id="box2" class="box">
+      </section>
+
+      <section id="box3" class="box">
+      </section>
+
+    </section>
+
+    <!---row 2-->
+    <section id="row2" class="row">
+
+      <section id="box4" class="box">
+      </section>
+      <!-- THE FORM -->
+      <section id="box5" class="box">
+        <fieldset id="form">
+          <label for="answer" id="label"></label>
+          </br>
+          <button id="button1" class="button" value=""></button>
+          </br>
+          <button id="button2" class="button" value=""></button>
+          </br>
+          <button id="button3" class="button" value=""></button>
+          </br>
+          <button id="button4" class="button" value=""></button>
+          </fieldset>
+     </section>
+      <!-- FORM END -->
+
+      <section id="box6" class="box">
+      </section>
+    </section>
+
+    </section>
+
+    <!---row 3-->
+    <section id="row3" class="row">
+      <section id="box7" class="box">
+      </section>
+
+      <section id="box8" class="box">
+      </section>
+
+      <section id="box9" class="box">
+      </section>
+
     </section>
 
   </main>
-  <embed src="dalia.img/music_preview.mp3" loop="true" autostart="true" width="2" height="0">
 
-    <footer>
-      <h1>OUTSIDE THE BOX
-      </br></br>Developed by
-      </br>Ayah Abu Hammad
-      </br>Dalia Abdelghani
-      </br>Mohammad Amer
-      </br>Mus'ab Al-Omari
-      </br>Ali Sartawi</h1>
-    </footer>
-  
+  <footer>
+    <h1>WHAT THE BOX
+    </br></br>Developed by
+    </br>Ayah Abu Hammad
+    </br>Dalia Abdelghani
+    </br>Mohammad Amer
+    </br>Mus'ab Al-Omari
+    </br>Ali Sartawi
+    </br></br>&copy; 2021 201-project</h1>
+  </footer>
   <script src="../../js/app.js"></script>
   <script src="./dalia.js"></script>
 

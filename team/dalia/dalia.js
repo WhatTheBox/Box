@@ -1,64 +1,87 @@
 'use strict';
 
-//let level = JSON.parse(localStorage.getItem('level')); 
-let level =7;
+let level =JSON.parse(localStorage.getItem('level'));
+if (level !== 7){
+  level =7;
+}
 const levelEl = document.getElementById('level');
 levelEl.textContent = level;
 
 
-let image = document.getElementById('image');
-let question = document.getElementById('questionText');
-let answer = document.getElementById('input');
-let message = document.getElementById('message');
+let question = document.getElementById('label');
+let option1 = document.getElementById('button1');
+let option2 = document.getElementById('button2');
+let option3 = document.getElementById('button3');
+let option4 = document.getElementById('button4');
 
+const alertBox = document.getElementById('alert');
+const alertButton = document.getElementById('alert-button');
+alertButton.addEventListener('click', alertButtonAction);
 
-function Quiz(question, answers, image,background) {
-  this.question = question;
-  this.answers = answers;
-  this.image = image;
-  this.background =background;
+const alertCorrectBox = document.getElementById('alertCorrect');
+const alertCorrectButton = document.getElementById('alertCorrect-button');
+alertCorrectButton.addEventListener('click', alertCorrectButtonAction);
+
+option1.addEventListener('click', clickedButtonFunction);
+option2.addEventListener('click', clickedButtonFunction);
+option3.addEventListener('click', clickedButtonFunction);
+option4.addEventListener('click', clickedButtonFunction);
+
+function clickedButtonFunction (event){
+  let selectedAnswer =event.target.textContent;
+  questions [currentQ].checkAnswer (selectedAnswer);
 }
 
-Quiz.prototype.render = function () {
-  image.src = this.image;
-  question.innerText = this.question;
-  document.body.style.backgroundImage = 'url('+this.background+')';
-  message.innerText = '';
-  answer.value = '';
-};
+function alertButtonAction (){
+  alertBox.style.visibility = 'hidden';
+}
 
-Quiz.prototype.checkAnswer = function () {
-  for (let i = 0; i < this.answers.length; i++) {
-    if ( answer.value.toLowerCase().trim() === this.answers[i]) {
-      message.innerHTML = 'EASY PEASY LEMON SQUEASY... NEXT QUESTION!';
-      currentQ++;
-      loadQuestion();
-      level++;
-      const levelEl = document.getElementById('level');
-      levelEl.textContent = level;
-      localStorage.setItem('level',JSON.stringify(level));
-      break;
-    }
-    else {
-      message.innerHTML = 'Think outside the box, baleez.';
-    }
+function alertCorrectButtonAction (){
+  loadQuestion();
+  alertCorrectBox.style.visibility='hidden';
+}
+
+Quiz.prototype.checkAnswer = function (selectedAnswer) {
+  if ( selectedAnswer === this.correctAnswer) {
+    level++;
+    currentQ++;
+    alertCorrectBox.style.visibility='visible';
+    const levelEl = document.getElementById('level');
+    levelEl.textContent = level;
+    localStorage.setItem('level',JSON.stringify(level));
+  }
+  else {
+    alertBox.style.visibility = 'visible';
   }
 };
 
 
-const question1 = new Quiz('What is the number of the parking spot covered by the car?', ['87'], 'dalia.img/q1.PNG','https://media3.giphy.com/media/18BKYnQ5Kc2re/giphy.gif');
-const question2 = new Quiz('In a two-sides street there are six houses red, blue ,white, green, yellow and pink . Three are in a row at each side. The red house is right of the middle and opposite to the green house. The blue house is left of the middle and opposite to the pink house.The green house is next to the yellow house. Where is the White House?'
-  , ['in washington dc','washington', 'usa', 'united states','america'],'dalia.img/background2.gif' ,'dalia.img/background22.gif');
-const question3 = new Quiz('In which direction the car is moving?', ['car is not moving, it has no wheels','car is not moving', 'not moving', 'stopped', 'no wheels'], 'dalia.img/q3.PNG','https://www.pwc.ie/images/2019/opposite-arrows-icon.gif');
+function Quiz(question,option1,option2,option3,option4,correctAnswer) {
+  this.question = question;
+  this.option1 = option1;
+  this.option2 = option2;
+  this.option3 = option3;
+  this.option4 = option4;
+  this.correctAnswer = correctAnswer;
+}
+
+Quiz.prototype.render = function () {
+  question.innerText = this.question;
+  option1.textContent=this.option1;
+  option2.textContent=this.option2;
+  option3.textContent=this.option3;
+  option4.textContent=this.option4;
+};
+
+
+const question1 = new Quiz('What is 3/7 chicken, 2/3 cat and 2/4 goat?','Childbirth','Chiffon','Chicago','Chipmunk','Chicago');
+const question2 = new Quiz('Don not be fooled, it is not thunder. Staying put would be a blunder.', 'Stampede','Horses','Earthquake','Arrows','Stampede');
+const question3 = new Quiz('Need a hand, well you just wait. We will lend a hand, we each have eight.', 'Octopuses','Spiders','Ants','Roaches','Spiders');
+
 
 const questions = [question1, question2, question3];
 let currentQ = 0;
 loadQuestion();
-
-let submit = document.getElementById('submitAnswer');
-submit.onclick = function () {
-  questions[currentQ].checkAnswer();
-};
 
 function loadQuestion() {
   if(currentQ < questions.length){
@@ -69,10 +92,3 @@ function loadQuestion() {
   }
 }
 
-function showAnswer() {
-  let ans = questions[currentQ].answers[0];
-  answer.value=ans;
-}
-
-let button = document.getElementById('showAnswerBtn');
-button.onclick = showAnswer;
