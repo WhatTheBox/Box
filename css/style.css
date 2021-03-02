@@ -1,11 +1,19 @@
+:root {
+  --primary: #000408;
+  --secondary: #0CCD58;
+  --tertiary: #0B6A26;
+  --light: #DFEFE2;
+  --dark: #000801;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
 }
 
 header {
-  color: white;
-  background-color: black;
+  color: var(--secondary);
+  background-color: var(--primary);
   padding: 30px;
   /* height: 10vh; */
   text-align: center;
@@ -14,7 +22,7 @@ header {
 }
 
 .box {
-  border: solid black;  
+  /* border: solid var(--primary);   */
   /* background: black; */
   flex: 33%;
   margin: 20px;
@@ -37,11 +45,13 @@ header {
 
 footer {
   clear: both;
-  color: white;
-  background-color: black;
+  color: var(--secondary);
+  background-color: var(--primary);
   padding: 30px;
   text-align: center;
   /* position: fixed; */
   bottom: 0;
   width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: normal;
 }
