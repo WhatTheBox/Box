@@ -1,3 +1,13 @@
+'use strict';
+
+
+let level=JSON.parse(localStorage.getItem('level'));
+if (level !== 18){
+  level=18;
+}
+localStorage.setItem('level',JSON.stringify(level));
+const levelEl=document.getElementById('level');
+levelEl.textContent=level;
 
 // let solution= document.getElementById('solution');
 
@@ -26,6 +36,9 @@ function handleNumber(event) {
     document.getElementById('alert').style.visibility = 'visible';
     document.getElementById('alert-text').innerHTML = 'i swear if you solve it from the first or the second time you should go to Japan, you are genies';
     tryAgain.onclick = function () {
+
+      level++;
+      localStorage.setItem('level',JSON.stringify(level));
       window.location = './musab3.html';
     };
   }
