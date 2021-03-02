@@ -10,7 +10,7 @@ localStorage.setItem('level', JSON.stringify(level));
 
 // eslint-disable-next-line no-unused-vars
 const quiz = document.getElementById('quiz');
-const question = document.getElementById('question');.
+const question = document.getElementById('question');
 
 const button1 = document.getElementById('buttonA');
 const button2 = document.getElementById('buttonB');
