@@ -21,6 +21,7 @@ box2.onclick = function () {
   document.getElementById('alert-text').innerHTML = 'you have done the impossible, you should be proud of your self';
   tryAgain.onclick = function () {
     document.getElementById('alert').style.visibility = 'hidden';
+
     window.location = '/team/musab/musab1.html';
   };
 
