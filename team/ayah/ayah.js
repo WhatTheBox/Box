@@ -1,7 +1,7 @@
 'use strict';
-// Local Storage
+// LocalStorage (level)
 let level = JSON.parse(localStorage.getItem('level'));
-if(level > 4 ){
+if(level !== 4 ){
   level = 4;
 }
 const levelEl = document.getElementById('level');
