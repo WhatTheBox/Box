@@ -1,3 +1,9 @@
+
+
+body{
+  box-sizing: border-box;
+  background-image: radial-gradient(circle, #006711 0%, #110101 100%);}
+
 main {
   margin: auto;
   background-image: url(/team/musab/img/42669630_custom-2048x934.jpg);
@@ -5,15 +11,12 @@ main {
   width: 1800px;
   position: relative;
 }
-
-#ps {
-  background-color: white;
-  color: black;
-  text-align: center;
+a{
+  text-decoration: none;
+  color: green;
 }
 
 #divo {
-  background-color: blue;
   cursor: pointer;
   width: 85px;
   height: 45px;
@@ -52,10 +55,10 @@ main {
 }
 
 #Fan {
-  position: relative;
+  position: absolute;
   height: 100px;
   width: 300px;
-  left: 520px;
+  left: 720px;
   top: -30px;
 }
 
@@ -92,6 +95,7 @@ main {
 }
 
 #alert {
+  z-index: 1;
   visibility: hidden;
   display: table;
   position: fixed;

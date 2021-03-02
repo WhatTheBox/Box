@@ -1,15 +1,17 @@
-*, *::before, *::after {
+*{
     box-sizing: border-box;
     font-family: Gotham Rounded, sans-serif;
     font-weight: normal;
 }
 
 body {
+    
+    max-width: 1000px;
     padding: 0;
-    margin: 0;
-    background-image: url(/team/musab/img/farm_photo_2.jpg);
-}
-
+    margin: auto;
+    background-image: radial-gradient(circle, #006711 0%, #110101 100%);}
+main{
+    background-image: radial-gradient(circle, #006711 0%, #110101 100%);}
 img {
     display: block;
     position: absolute;

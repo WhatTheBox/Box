@@ -23,7 +23,11 @@ const numberSection = document.getElementById('calculator-grid');
 numberSection.addEventListener('click', handleNumber);
 function handleNumber(event) {
   if (event.target.id === 'solution') {
-    window.location = './musab3.html';
+    document.getElementById('alert').style.visibility = 'visible';
+    document.getElementById('alert-text').innerHTML = 'i swear if you solve it from the first or the second time you should go to Japan, you are genies';
+    tryAgain.onclick = function () {
+      window.location = './musab3.html';
+    };
   }
   else {
     document.getElementById('alert').style.visibility = 'visible';

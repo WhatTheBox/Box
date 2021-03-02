@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="./musab2.css">
+    <link rel="stylesheet" href="./musab3.css">
     <title>Box</title>
 </head>
 
@@ -17,33 +17,43 @@
         <div id="demo"></div>
     </header>
     <main>
-        <div id="app"></div>
-        <p id="myParagraph">You are in the plane and accidentally you enter the pilot room.the pilot tells you don't
-            click on any thing . you imagine that the plan is on fire what should you do in order to rescue the
-            passengers </p>
-        <form id="form">
-            <legend>Answers</legend>
+        <div id="app">
+            <div class="base-timer">
+                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g class="base-timer__circle">
+                        <circle id="death" class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                    </g>
+                </svg>
+                <span id="base-timer-label" class="base-timer__label"></span>
+            </div>
+
+
+
+        </div>
+        <section  id="form">
+
+            <p id="myParagraph">You are in the plane and accidentally you enter the pilot room.the pilot tells you don't
+                click on any thing . you imagine that the plan is on fire what should you do in order to rescue the
+                passengers </p>
+            <form>
+                <legend>Answers</legend>
+                <br>
+    
+                <fieldset>
+                    <label for="mosab"></label>
+                    <input type="button" value="take control on the plain">
+                    <input type="button" value="call your brother">
+                    <input type="button" value="search on the google for solutions">
+    
+                </fieldset>
+            </form>
             <br>
+            <br>
+        </section>
 
-            <fieldset>
-                <label for="mosab"></label>
-                <input type="button" value="take control on the plain">
-                <input type="button" value="call your brother">
-                <input type="button" value="search on the google for solutions">
-
-            </fieldset>
-        </form>
-        <br>
-        <br>
-
-        <img id="img1" src="/team/musab/alert/giphy.gif" alt="">
-        <img id="img2" src="/team/musab/alert/tenor.gif" alt="">
-        <!-- <img src="/team/musab/alert/tenor (1).gif" alt="">
-            <img src="team/musab/alert/MediumSeparateAsiandamselfly-small.gif" alt=""> -->
-        <br>
-        <img src="/team/musab/alert/tenor (1).gif" alt="">
-
-
+        <img id="img1" src="https://thumbs.gfycat.com/DelayedVacantDassie-max-1mb.gif" alt="">
+        <img id="img2" src="https://thumbs.gfycat.com/DelayedVacantDassie-max-1mb.gif" alt="">
+        
     </main>
     <footer>
         <h1 id="footer">FOOTER</h1>

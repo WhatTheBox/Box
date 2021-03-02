@@ -1,19 +1,32 @@
 
-let box2 = document.getElementById('divo');
+
 let box5 = document.getElementById('box5');
 let tryAgain = document.getElementById('alert-button');
-box2.onclick = function () {
-  alert('you have done the impossible, you should be proud of your self ');
-};
+
+
 
 box5.onclick = function () {
   document.getElementById('alert').style.visibility = 'visible';
-  document.getElementById('alert-text').innerHTML='Did you get the idea ? <br> the box is empty <br> thats was your final hint';
+  document.getElementById('alert-text').innerHTML = 'Did you get the idea ? <br> the box is empty <br> thats was your final hint';
 };
 
 
 
-tryAgain.onclick =function(){
+
+let box2 = document.getElementById('divo');
+
+
+box2.onclick = function () {
+  document.getElementById('alert').style.visibility = 'visible';
+  document.getElementById('alert-text').innerHTML = 'you have done the impossible, you should be proud of your self';
+  tryAgain.onclick = function () {
+    document.getElementById('alert').style.visibility = 'hidden';
+    window.location = '/team/musab/musab1.html';
+  };
+
+};
+
+tryAgain.onclick = function () {
   document.getElementById('alert').style.visibility = 'hidden';
 };
 
