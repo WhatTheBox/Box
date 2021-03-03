@@ -35,20 +35,13 @@ Box.prototype.render=function(){
   }
 };
 
-// Box.prototype.sequence= function (correct){
-//   const clickEl=document.getElementById('form');
-//   clickEl.addEventListener('click', handleClick);
-
-// }
-
-
-const qOne=new Box('Jordan locations Emoji Guessing Game','ya \uD83D\uDC1B','yadodeh','yajoz','place','sec');
-const qTwo=new Box('Jordan locations Emoji guessing Game','Ta \uD83D\uDC18','tafileh','place','place','place');
-const qThree=new Box('Jordan locations Emoji guessing Game','Ta \uD83D\uDE2A','yadodeh','yajoz','Tabarbour','place');
-const qFour=new Box('Jordan locations Emoji guessing Game','\u26F0\uFE0F \u270C\uFE0F','yadodeh','Jabal Al-Naser','place','place');
-const qFive=new Box('Jordan locations Emoji guessing Game','\uD83C\uDDEF\uD83C\uDDF4 \uD83D\uDEE3\uFE0F','Jordan First','Jordan Highway','Jordan Street','place');
-const qSix=new Box('Jordan locations Emoji guessing Game','\uD83E\uDDD5 \uD83D\uDCA1','yadodeh','yajoz','place','Um Nuara');
-const qSeven=new Box('Jordan locations Emoji guessing Game','Al- \uD83D\uDCAA smeh','yadodeh','yajoz','place','Al-Quaismeh');
+const qOne=new Box('Jordan locations Emoji Guessing Game','Ya \uD83D\uDC1B','Yadodeh','Yajoz','Yarga','Yasmeen');
+const qTwo=new Box('Jordan locations Emoji guessing Game','Ta \uD83D\uDC18','Tafileh','Tabarbour','Tamam','place not in Jordan');
+const qThree=new Box('Jordan locations Emoji guessing Game','Ta \uD83D\uDE2A','Table','Tamer','Tabarbour','Tafileh');
+const qFour=new Box('Jordan locations Emoji guessing Game','\u26F0\uFE0F \u270C\uFE0F','Jabal Al Qala\'ah','Jabal Al-Naser','Jabal Al-Taj','Jabal Amman');
+const qFive=new Box('Jordan locations Emoji guessing Game','\uD83C\uDDEF\uD83C\uDDF4 \uD83D\uDEE3\uFE0F','Jordan First','Jordan=KSA Highway','Jordan Street','Jordan Flag');
+const qSix=new Box('Jordan locations Emoji guessing Game','\uD83E\uDDD5 \uD83D\uDCA1','Um Tieneh','Um Zwaiteneh','Um Lamba','Um Nuara');
+const qSeven=new Box('Jordan locations Emoji guessing Game','Al- \uD83D\uDCAA smeh','Al Taj','Al Muagar','Al-Yarmook','Al-Quaismeh');
 
 console.table(Box.all);
 
