@@ -121,7 +121,7 @@ function timerExp() {
 
   if (timeLeft === 0) {
     onTimesUp();
-  } else if (timeLeft === 1170) {
+  } else if (timeLeft === 1190) {
     let tryAgain = document.getElementById('alert-button');
     document.getElementById('alert').style.visibility = 'visible';
     document.getElementById('alert-text').innerHTML = 'the game is done ';
