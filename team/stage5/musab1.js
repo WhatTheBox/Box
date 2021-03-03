@@ -39,7 +39,7 @@ function handleNumber(event) {
 
       level++;
       localStorage.setItem('level',JSON.stringify(level));
-      window.location = './musab3.html';
+      window.location = './stage5c.html';
     };
   }
   else {

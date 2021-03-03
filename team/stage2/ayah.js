@@ -151,7 +151,7 @@ function handleThree(event){
     localStorage.setItem('level', JSON.stringify(level));
 
     // linking to next page
-    window.location = '../dalia/dalia.html';
+    window.location = '../stage3/stage3.html';
   } else if(event.target.className === 'button'){
     for (let i = 0; i < 5; i++) {
       if(event.target.id === `button${i}`){

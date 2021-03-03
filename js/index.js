@@ -9,7 +9,7 @@ startGame.addEventListener('click', handleStartGame);
 function handleStartGame(event){
   console.log(event);
   if(event.target.id === 'button1'){
-    window.location = './team/ali/ali.html';
+    window.location = './team/stage1/stage1.html';
   }
 }
 

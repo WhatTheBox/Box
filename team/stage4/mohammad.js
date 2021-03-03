@@ -130,7 +130,7 @@ function handleSeven(event){
   if (event.target.id==='button4'){
     const clickSeven=document.getElementById('form');
     clickSeven.removeEventListener('click',handleSeven);
-    window.location= '../musab/musab.html';
+    window.location= '../stage5/stage5.html';
   }
 }
 

@@ -185,7 +185,7 @@ function handleClickThree(event) {
     alertText.textContent = 'Some questions in life have answers... some don\'t... but if you don\'t try... you\'ll never know!!';
     alertButton.textContent = 'WHAT\'S NEXT?';
     if(event.target.id === 'alert-button'){
-      window.location = '../ayah/ayah.html';
+      window.location = '../stage2/stage2.html';
     }
   }
 }

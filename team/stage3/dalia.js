@@ -88,7 +88,7 @@ function loadQuestion() {
     questions[currentQ].render();
   }else{
     ///TODO move to next page
-    window.location ='../mohammad/mohammad.html';
+    window.location ='../stage4/stage4.html';
   }
 }
 
