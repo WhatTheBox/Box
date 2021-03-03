@@ -2,7 +2,9 @@
 
 **What The Box** is a puzzle game where you have to think outside the box... sometimes literally.
 
-Some questions can be confusing at first... but they test aspect of the human psychology on a deeper level, such as patience, tenacity and the ability to fathom multi-layered statements.
+Some questions can be confusing at first... but they test aspects of the human psychology at a deep level, such as patience, tenacity and the ability to fathom multi-layered statements.
+
+---
 
 | **Team Member** | **Levels** |
 | :-------------: | :--------: |
