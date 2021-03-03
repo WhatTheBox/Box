@@ -31,7 +31,7 @@ box2.onclick = function () {
     document.getElementById('alert').style.visibility = 'hidden';
     level++;
     localStorage.setItem('level',JSON.stringify(level));
-    window.location = '/team/musab/musab1.html';
+    window.location = './team/musab/musab1.html';
   };
 
 };
